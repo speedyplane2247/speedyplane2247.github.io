@@ -7,16 +7,18 @@
 <h2> Encoder </h2>
 <form>
   Decoded URI:<br>
-  <input type="text" name="decode"><br>
+  <input type="text" name="decodeX12"><br>
+  <button type="submit" onclick="encode()">Encode</button>
   </form>
-<button type="submit" onclick="encode()">Encode</button>
+
 <p id="outputEncoded">Encoded URI: </p>
 <h2> Decoder </h2>
 <form>
   Encoded URI:<br>
-  <input type="text" name="encodeX1"><br>
+  <input type="text" name="encodeX12"><br>
+  <button onclick="decode()">Decode!</button>
   </form>
-<button onclick="decode()">Decode!</button>
+
 <p id="outputDecoded">Decoded URI: </p>
 <noscript>This site uses JavaScript to allow it to encode/decode URIs.</noscript>
 </body>
