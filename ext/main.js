@@ -7,7 +7,8 @@ function encode() {
   try {
     var decodedURI = document.getElementById("decode");
 var encodedURI = encodeURI(decodedURI);
-document.getElementByID("outputEncoded").innerHTML = "Encoded URI: " + encodedURI
+var x = document.getElementByID("outputEncoded")
+x.innerHTML = "Encoded URI: " + encodedURI
 }
 catch(err) {
     alert(err.message)
