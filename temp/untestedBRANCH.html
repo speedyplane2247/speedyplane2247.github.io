@@ -1,0 +1,19 @@
+<h1>pkg93 GUI</h1>
+<HR WIDTH="50%" SIZE="3" NOSHADE>
+<h2>Packages</h2>
+<button href="javascript:listPackage();">Get Packages</button>
+<h3>Available</h3>
+<p id="packagelist">No package list!</p>
+<h3>Installed</h3>
+<p id="installedpkg">No Package list!</p>
+<HR WIDTH="50%" SIZE="3" NOSHADE>
+<h2>Repos</h2>
+<button href="javascript:var repo = prompt('Please type the name of a new repo to add!', ''); checkRepo();">Add Repo</button>
+<p id="repolist">Getting repos...</p>
+<HR WIDTH="50%" SIZE="3" NOSHADE>
+<h2>Manager</h2>
+<button href="javascript:var toInstall = prompt('Please type the name of the package to install!', ''); install(toInstall);">Install</button>
+<button href="javascript:var toUnInstall = prompt('Please type the name of the package to install!', ''); Uninstall(toUnInstall);">UnInstall</button>
+<HR WIDTH="50%" SIZE="3" NOSHADE>
+<h2>Log</h2>
+<p id="consoleoutput">Nothing is here. Something will appear as soon as you do something!</p>
