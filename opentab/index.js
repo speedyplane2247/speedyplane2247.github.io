@@ -1,6 +1,10 @@
-console.log("Welcome to OpeNTab JS Console! You can customize things using customizeColor(r,g,b) to customize colors or customizeColorStick(r,g,b) to make these changes stick.")
-console.log("If you don't like your new color scheme, you can type resetColor() and reset the colors back to stock!")
-var descURL = "2G0TQZj" // tracker frame
+/*
+OpeNTab BackEnd
+Index.js
+(c) speedyplane2247 2017-2018
+Under MIT license
+*/console.log("Welcome to OpeNTab JS Console! You can customize things using customizeColor(r,g,b) to customize colors or customizeColorStick(r,g,b) to make these changes stick.\n\nIf you don't like your new color scheme, you can type resetColor() and reset the colors back to stock!\nYou can also inject custom CSS using customCSS(url) and customCSSstick(url).")
+// tracker frame
 if (navigator.doNotTrack == "1") {
     var track = false
 }
@@ -20,13 +24,15 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function customCSS(url) {
+function customCSS(url, type) {
     var fileref = document.createElement("link")
     fileref.setAttribute("rel", "stylesheet")
     fileref.setAttribute("type", "text/css")
     fileref.setAttribute("href", url)
     document.getElementsByTagName("head")[0].appendChild(fileref)
-    console.log("Custom CSS injected.")
+    if (type != "silent" || type === undefined) {
+        console.log("Custom CSS injected.")
+    }
 }
 
 function customCSSstick(url) {
@@ -74,11 +80,10 @@ function makeDefaultEngine() {
         // set aol.com as default
         setCookie("default", "aolcom")
     }
-    
 
 }
 function resetCSS() {
-    setCookie("customcss", null)
+    setCookie("customcss", undefined)
     location.reload()
 }
 
@@ -119,17 +124,20 @@ document.addEventListener("keypress", function(event) {
         search();
     }
 })
+window.onhashchange = function () {
+    if (location.hash.toString().indexOf("/search/") != -1) {
+        var searchQuery = location.hash.toString().split("/search/")[1]
+        var searchBox = document.getElementById("searchbox")
+        searchBox.value = decodeURIComponent(searchQuery)
+    } 
+}
 window.onload = function() {
-    var trackerframe = document.createElement('iframe');
-        document.body.appendChild(trackerframe);
-        trackerframe.contentWindow.document.open();
-        trackerframe.src = "http://bit.ly/"+descURL
-        trackerframe.width = 1
-        trackerframe.height = 1
-        trackerframe.contentWindow.document.close(); // creates a new tracker
-        trackerframe.onload = function() {
-            location.href = searchText
-        }
+    if (track != false) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-118988635-1');
+    }
     if (location.hash.toString().indexOf("/search/") != -1) {
         var searchQuery = location.hash.toString().split("/search/")[1]
         var searchBox = document.getElementById("searchbox")
@@ -145,7 +153,7 @@ window.onload = function() {
         console.log("Setting it up is simple: In your browser's settings, goto the spot to add a new search engine. Use the following code,\n\nhttp://urlofyourhosting.tld:port/index.html#/search/%s\n, where %s represents the query term (specified by your browser.)\n\n ")
     }
     if (getCookie("customcss") !== undefined) {
-        customCSS(getCookie("customcss"))
+        customCSS(getCookie("customcss"), "silent")
     }
     if (getCookie("default") == "google") {
         // set option to google
@@ -182,7 +190,7 @@ window.onload = function() {
         var searchEngine = document.getElementById("searchengine")
         searchEngine.options.selectedIndex = 6
     }
-    
+
 }
 
 function search() {
@@ -190,35 +198,43 @@ function search() {
     var searchEngine = document.getElementById("searchengine")
     var searchText = "http://example.com/search.php?q=class"
     if (searchEngine.options.selectedIndex == 0) {
-        searchText = "https://www.google.com/search?q=" + encodeURIComponent(searchBox.value) // Google Search Query
+        searchText = "https://www.google.com/search?q=" + encodeURIComponent(searchBox.value)
+        // Google Search Query
     }
     if (searchEngine.options.selectedIndex == 1) {
-        searchText = "https://search.yahoo.com/search?p=" + encodeURIComponent(searchBox.value) // Yahoo Search Query
+        searchText = "https://search.yahoo.com/search?p=" + encodeURIComponent(searchBox.value)
+        // Yahoo Search Query
     }
     if (searchEngine.options.selectedIndex == 2) {
-        searchText = "http://www.bing.com/search?q=" + encodeURIComponent(searchBox.value) // Bing Search Query
+        searchText = "http://www.bing.com/search?q=" + encodeURIComponent(searchBox.value)
+        // Bing Search Query
     }
     if (searchEngine.options.selectedIndex == 3) {
-        searchText = "https://duckduckgo.com/?q=" + encodeURIComponent(searchBox.value) // DuckDuckGo Search Query
+        searchText = "https://duckduckgo.com/?q=" + encodeURIComponent(searchBox.value)
+        // DuckDuckGo Search Query
     }
     if (searchEngine.options.selectedIndex == 4) {
-        searchText = "http://www.wolframalpha.com/input/?i=" + encodeURIComponent(searchBox.value) // WolfRam Alpha Search Query
+        searchText = "http://www.wolframalpha.com/input/?i=" + encodeURIComponent(searchBox.value)
+        // WolfRam Alpha Search Query
     }
     if (searchEngine.options.selectedIndex == 5) {
-        searchText = "https://www.ask.com/web?q=" + encodeURIComponent(searchBox.value) // Ask.com Search Query
+        searchText = "https://www.ask.com/web?q=" + encodeURIComponent(searchBox.value)
+        // Ask.com Search Query
     }
     if (searchEngine.options.selectedIndex == 6) {
-        searchText = "https://search.aol.com/aol/search?q="+ encodeURIComponent(searchBox.value) // Aol.com Search Query
+        searchText = "https://search.aol.com/aol/search?q=" + encodeURIComponent(searchBox.value)
+        // Aol.com Search Query
     }
 
     if (track != false) {
         var trackerframeX = document.createElement('iframe');
         document.body.appendChild(trackerframeX);
         trackerframeX.contentWindow.document.open();
-        trackerframeX.contentWindow.location.href = "http://bit.ly/"+descURL
+        trackerframeX.src = "http://bit.ly/" + descURL
         trackerframeX.width = 1
         trackerframeX.height = 1
-        trackerframeX.contentWindow.document.close(); // creates a new tracker
+        trackerframeX.contentWindow.document.close();
+        // creates a new tracker
         trackerframeX.onload = function() {
             location.href = searchText
         }
