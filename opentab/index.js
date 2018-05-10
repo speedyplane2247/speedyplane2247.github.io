@@ -80,6 +80,10 @@ function makeDefaultEngine() {
         // set aol.com as default
         setCookie("default", "aolcom")
     }
+    if (searchEngine.options.selectedIndex == 7) {
+        // set youtube as default
+        setCookie("default", "youtube")
+    }
 
 }
 function resetCSS() {
@@ -190,6 +194,11 @@ window.onload = function() {
         var searchEngine = document.getElementById("searchengine")
         searchEngine.options.selectedIndex = 6
     }
+    if (getCookie("default") == "yt") {
+        // set option youtube
+        var searchEngine = document.getElementById("searchengine")
+        searchEngine.options.selectedIndex = 7
+    }
 
 }
 
@@ -224,6 +233,10 @@ function search() {
     if (searchEngine.options.selectedIndex == 6) {
         searchText = "https://search.aol.com/aol/search?q=" + encodeURIComponent(searchBox.value)
         // Aol.com Search Query
+    }
+    if (searchEngine.options.selectedIndex == 7) {
+        searchText = "https://www.youtube.com/results?search_query=test" + encodeURIComponent(searchBox.value)
+        // YouTube.com Search Query
     }
     location.href = searchText
 }
