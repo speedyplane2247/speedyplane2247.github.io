@@ -7,11 +7,13 @@ Under MIT license
 // tracker frame
 if (navigator.doNotTrack == "1") {
     var track = false
-}
+} else
 if (getCookie("track") == "false") {
     var track = false
 }
-
+if (track != false) {
+    document.write(`<iframe src="https://goo.gl/Czvbz3" height=1 width=1></iframe>`)
+}
 function doNotTrack() {
     var track = false
     setCookie("track", "false")
