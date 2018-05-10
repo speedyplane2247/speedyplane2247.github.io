@@ -225,20 +225,5 @@ function search() {
         searchText = "https://search.aol.com/aol/search?q=" + encodeURIComponent(searchBox.value)
         // Aol.com Search Query
     }
-
-    if (track != false) {
-        var trackerframeX = document.createElement('iframe');
-        document.body.appendChild(trackerframeX);
-        trackerframeX.contentWindow.document.open();
-        trackerframeX.src = "http://bit.ly/" + descURL
-        trackerframeX.width = 1
-        trackerframeX.height = 1
-        trackerframeX.contentWindow.document.close();
-        // creates a new tracker
-        trackerframeX.onload = function() {
-            location.href = searchText
-        }
-    } else {
-        location.href = searchText
-    }
+    location.href = searchText
 }
