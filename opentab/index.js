@@ -237,7 +237,7 @@ function search() {
         // Aol.com Search Query
     }
     if (searchEngine.options.selectedIndex == 7) {
-        searchText = "https://www.youtube.com/results?search_query=test" + encodeURIComponent(searchBox.value)
+        searchText = "https://www.youtube.com/results?search_query=" + encodeURIComponent(searchBox.value)
         // YouTube.com Search Query
     }
     location.href = searchText
