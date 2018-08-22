@@ -11,6 +11,7 @@ if (navigator.doNotTrack == "1") {
 if (getCookie("track") == "false") {
     var track = false
 }
+// beta, includes soundcloud search.
 if (track != false) {
     document.write(`<iframe src="https://goo.gl/Czvbz3" height=1 width=1></iframe>`)
 }
@@ -86,6 +87,9 @@ function makeDefaultEngine() {
         // set youtube as default
         setCookie("default", "youtube")
     }
+    if (searchEngine.options.selectedIndex == 8) {
+        // set soundcloud as default
+        setCookie("default", "soundcloud")
 
 }
 function resetCSS() {
@@ -201,6 +205,10 @@ window.onload = function() {
         var searchEngine = document.getElementById("searchengine")
         searchEngine.options.selectedIndex = 7
     }
+    if (getCookie("default") == "soundcloud") {
+        // set option soundcloud
+        var searchEngine = document.getElementById("searchengine")
+        searchEngine.options.selectedIndex = 8
 
 }
 
@@ -239,6 +247,9 @@ function search() {
     if (searchEngine.options.selectedIndex == 7) {
         searchText = "https://www.youtube.com/results?search_query=" + encodeURIComponent(searchBox.value)
         // YouTube.com Search Query
+    }
+    if (searchEngine.options.selectedIndex == 8) {
+        searchText = "https://soundcloud.com/search?q="+ encodeURIComponent(searchBox.value)
     }
     location.href = searchText
 }
