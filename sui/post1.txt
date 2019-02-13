@@ -1,0 +1,20 @@
+Hey guys! I'm starting this blog for SourceUI! I want to cover a few pretty basic topics on here. 
+
+
+What is SourceUI?
+
+It's a game engine designed to not only run the game itself, but all menus are also live-rendered in SourceUI, which is where I got the name from, a UI for Source games. It doesn't have to be a source game, it can be any game / menu or whatnot.
+
+Where are security protections?
+
+Obviously, I haven't released the binaries or source code, but even within Refraction, you can see the client is fully open and the only form of protection in commands is an sv_cheats CVAR, but even that doesn't have any memory protection and can easily be spoofed from Cheat Engine or whatever. The only protection from you typing 'noclip' in console and teleporting to the other side of the world - is this sv_cheats memory key - oh, but wait! Rather than a traditional operator keys and such, the server (unless specificed in the server_game.xml; server_precheck 1) is always watching everyone, to see what information they can see. No server CVARs (server_game.xml isn't spoofable) or anything that can modify someone else's expeirence are sent to the server. No one can see what you're doing and you only get the data you can "see". Doing this stuff is fun, but you data from other players, (and server_invalidcvarsend 0 prevents you from getting any data all) is limited to only where the server sees you at. There are a few useful commands (server_game.xml, not a cvar) that can help with this:
+
+(The value is the default option in the game)
+server_precheck 1: Whether or not the server determines where/what info you can recieve.
+server_invalidcvarsend 1: Disables all data from the server if an invalid cvar is sent over.
+server_checkcvarsalways 2: Checks all clients cvars (1 = on per tick, 2 on per 2 ticks)
+server_bancheats 0: Ban players spoofing sv_cheats 1 for 15 minutes. 
+server_bancheatstimer 15: How long to ban (minutes) for sv_cheats 1 spoofing (if enabled)
+server_kickcheats 0: Kick players using cheats/custom cvars.
+
+If you have any questions, create an Issue and I'll try to answer them! 
