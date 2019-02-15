@@ -1,0 +1,7 @@
+Hey guys! Here's a quick little update on DDD/Source UI. 
+
+I have a working demo SourceUI Testbed, which is pretty cool. Here's a live rendered little sneak-peak. https://imgur.com/a/JS6C8sd
+
+The only part that isn't running on DDD is the version numbers, console, and the white background (It basically is a fail-safe)
+
+Not a lot has changed, but commands are working, and so are some limited CVAR support + CVAR_protect, so some are cheat protected / can't be set in game.
