@@ -1,0 +1,5 @@
+This is a bit longer of a post, so I'm gonna write some updates.
+
+I'm delaying the SourceUI v0.98 port for a program I'm writing.
+
+I'm not going to ship any pre-release versions, as they unstable and have messy code. I'm going to use the 1.02 codebase, but re-write it to be neater. Along with this, I'm starting a new MD-based blog.  
