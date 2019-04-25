@@ -1,5 +1,5 @@
 # Current LTS Release
-\81LTS\
+\8-1L-T-S\
 # Current Release
 \811\
 # Current Legacy Release
