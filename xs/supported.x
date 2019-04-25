@@ -2,6 +2,7 @@
 \8-1L-T-S\
 # Current Release
 \811\
+\812\
 # Current Legacy Release
 \801\
 \420\
