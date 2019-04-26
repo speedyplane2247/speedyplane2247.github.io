@@ -2,13 +2,11 @@
 \801\
 # Current Release
 \813\
+\820\
 # Current Legacy Release
-\711\
-\712\
+\714\
 # Current Beta Release
 # Current Dev Release
-\814\
-\820\
 # Older but Supported Releases
 # Enterprise Releases
-\713\
+\820a\
