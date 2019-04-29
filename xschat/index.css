@@ -1,18 +1,18 @@
 body {
-    background-color: #42d0ff
+    background-color: rgb(96, 246, 117)
 }
 h1 {
-    color: #ff19e4
+    color: rgb(21, 21, 40)
 }
 p {
-    color: #ff19e4
+    color: rgb(21, 21, 40)
 }
 input {
-    background-color: #42d0ff
+    background-color: rgb(96, 246, 117)
 }
 button {
-background-color: #42d0ff
+background-color: rgb(96, 246, 117)
 }
 select {
-background-color: #42d0ff
+background-color: rgb(96, 246, 117)
 }
