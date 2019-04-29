@@ -1,5 +1,4 @@
 # Current LTS Release
-\8-1-L-T-S-\
 \813\
 # Current Release
 \820\
