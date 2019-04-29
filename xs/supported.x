@@ -1,8 +1,8 @@
 # Current LTS Release
 \8-1-L-T-S-\
+\813\
 # Current Release
 \820\
-\813\
 # Current Legacy Release
 \801\
 # Current Beta Release
@@ -10,3 +10,4 @@
 # Older but Supported Releases
 # Enterprise Releases
 \820a\
+\820b\
