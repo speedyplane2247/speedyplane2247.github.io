@@ -11,3 +11,9 @@
 # Enterprise Releases
 \820a\
 \820b\
+# Current Colored Release (AutoUpdater)
+\au-830-b\
+\au-830-g\
+\au-830-grey\
+# Current Legacy HTML Release (HTML)
+\830\
