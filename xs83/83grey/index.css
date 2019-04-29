@@ -1,0 +1,28 @@
+body {
+    background-color: rgba(10, 14, 11, 0.808)
+}
+h1 {
+    color: rgb(30, 70, 156)
+}
+p {
+    color: rgb(30, 70, 156)
+}
+input {
+    background-color: rgba(10, 14, 11, 0.808);
+    color: rgb(30,70,156)
+}
+button {
+background-color: rgba(10, 14, 11, 0.808);
+color: rgb(30,70,156)
+}
+select {
+background-color: rgba(10, 14, 11, 0.808);
+color: rgb(30,70,156)
+}
+noteelement {
+    note: "CSSNotesv2Libary";
+    }
+    noteelement_node1 {
+        note: "Adjust your CSS files here!";
+        }
+            
