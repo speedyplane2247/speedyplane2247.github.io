@@ -282,6 +282,16 @@ function erun() {
         //  }
 
     }
+    if ($xs.data == "x840") {
+        $xs.ver = "x840"
+        // if ($xs.eord == "e") {
+        $xs.x840.encrypt($xs.msg, $xs.channel)
+        //  }
+        //  if ($xs.eord == "d") {
+        //     alert($xs.x712.decrypt($xs.msg))
+        //  }
+
+    }
 
 }
 
@@ -326,6 +336,16 @@ function drun() {
         $xs.ver = "x832"
         // if ($xs.eord == "e") {
         $xs.x832.decrypt($xs.msg, $xs.channel)
+        //  }
+        //  if ($xs.eord == "d") {
+        //     alert($xs.x712.decrypt($xs.msg))
+        //  }
+
+    }
+    if ($xs.data == "x840") {
+        $xs.ver = "x840"
+        // if ($xs.eord == "e") {
+        $xs.x840.decrypt($xs.msg, $xs.channel)
         //  }
         //  if ($xs.eord == "d") {
         //     alert($xs.x712.decrypt($xs.msg))
